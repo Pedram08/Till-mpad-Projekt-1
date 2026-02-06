@@ -75,16 +75,6 @@ void loop() {
     noTone(buzzer);
   }
 
-  if (gameactive) {
-
-    if (alarmActive) {
-      digitalWrite(led1, HIGH);
-      digitalWrite(led2, HIGH);
-    } else {
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, LOW);
-    }
-  }
 
 
   if (gameactive) {
