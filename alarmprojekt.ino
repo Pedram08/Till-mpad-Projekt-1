@@ -12,7 +12,7 @@ const int ledPins[4] = { 3, 5, 7, 10 };
 const int buttonPins[4] = { 2, 4, 6, 9 };
 
 int alarmHour = 13;
-int alarmMinute = 43;
+int alarmMinute = 59;
 
 bool alarmActive = false;
 bool alarmTrigger = false;
@@ -42,8 +42,6 @@ void setup() {
 
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
-
-  winEffect();
 }
 
 void loop() {
@@ -71,13 +69,15 @@ void loop() {
     alarmTrigger = false;
   }
 
+  
+
   if (!alarmActive) {
     noTone(buzzer);
   }
 
   if (gameactive) {
 
-    if (s % 2) {
+    if (alarmActive) {
       digitalWrite(led1, HIGH);
       digitalWrite(led2, HIGH);
     } else {
